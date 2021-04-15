@@ -5,7 +5,8 @@ This function saves a welcome message.
 import json
 
 def concatenate(message,name):
-
+    message = json.loads(message)
+    name = json.loads(name)
     sentence = message["message"]+name["name"]
 
     message_dict = {}
