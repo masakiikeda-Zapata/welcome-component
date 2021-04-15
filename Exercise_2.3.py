@@ -4,10 +4,12 @@ This function saves a welcome message.
 
 import json
 
-def concatenate(message_file, name_file):
-    message = json.load(message_file)
-    name = json.load(name_file)
-    sentence = message["message"]+name["name"]
+def concatenate(message, name):
+    with open(message, "r") as f:
+        input_message = json.load(f)
+    with open(name, "r") as f:
+        input_name = json.load(f)
+    sentence = input_message["message"]+input_name["name"]
 
     message_dict = {}
     message_dict["sentence"] = sentence
